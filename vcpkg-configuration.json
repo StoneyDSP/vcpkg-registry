@@ -6,6 +6,37 @@
       "repository": "https://github.com/Microsoft/vcpkg",
       "baseline": "42bb0d9e8d4cf33485afb9ee2229150f79f61a1f",
       "packages": ["*"]
+    },
+    {
+      "kind": "filesystem",
+      "path": ".",
+      "baseline": "2024-11-27",
+      "packages": [
+        "stoneydsp",
+        "rack-sdk",
+        "curl",
+        "ghc-filesystem",
+        "glfw",
+        "glew",
+        "libarchive",
+        "libsamplerate",
+        "jansson",
+        "nanovg",
+        "nanosvg",
+        "openssl",
+        "pffft",
+        "rtaudio",
+        "rtmidi",
+        "speexdsp",
+        "tinyexpr",
+        "zstd"
+      ]
     }
+  ],
+  "overlay-ports": [
+    "ports"
+  ],
+  "overlay-triplets": [
+    "triplets"
   ]
 }
