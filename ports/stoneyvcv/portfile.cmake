@@ -87,6 +87,8 @@ list(APPEND FILES_TO_MOVE
     "plugin.json"
     "LICENSE"
     "VERSION"
+    "res"
+    "presets"
 )
 foreach(FILE IN LISTS FILES_TO_MOVE)
     file(
@@ -105,7 +107,11 @@ else()
 endif()
 file(
     COPY "${CURRENT_PACKAGES_DIR}/${FILE}"
-    DESTINATION "${CURRENT_PACKAGES_DIR}/lib/rack/plugins/${PORT}"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib/rack/plugins/StoneyVCV"
+)
+file(
+    COPY "${CURRENT_PACKAGES_DIR}/${FILE}"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/lib/rack/plugins/StoneyVCV"
 )
 file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/${FILE}")
 file(REMOVE "${CURRENT_PACKAGES_DIR}/${FILE}")
