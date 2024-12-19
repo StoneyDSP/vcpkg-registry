@@ -10,7 +10,7 @@
     {
       "kind": "filesystem",
       "path": ".",
-      "baseline": "2024-11-27",
+      "baseline": "default",
       "packages": [
         "stoneydsp",
         "rack-sdk",
