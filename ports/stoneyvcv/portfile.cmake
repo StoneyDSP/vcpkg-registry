@@ -63,7 +63,7 @@ vcpkg_cmake_configure(
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(
     PACKAGE_NAME StoneyVCV
-    CONFIG_PATH "lib/cmake/StoneyDSP"
+    CONFIG_PATH "lib/cmake/StoneyVCV"
 )
 vcpkg_fixup_pkgconfig()
 
