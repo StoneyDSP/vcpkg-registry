@@ -28,6 +28,10 @@
 #
 # 	See additional helpful variables in /docs/maintainers/vcpkg_common_definitions.md
 
+if(VCPKG_TARGET_IS_MINGW)
+    set(VCPKG_CRT_LINKAGE)
+endif()
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO StoneyDSP/StoneyVCV
@@ -63,7 +67,7 @@ vcpkg_cmake_configure(
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(
     PACKAGE_NAME StoneyVCV
-    CONFIG_PATH "lib/cmake/StoneyVCV"
+    CONFIG_PATH "lib/cmake/StoneyDSP"
 )
 vcpkg_fixup_pkgconfig()
 
@@ -73,6 +77,21 @@ vcpkg_fixup_pkgconfig()
 file(
     INSTALL "${SOURCE_PATH}/LICENSE"
     DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+    RENAME copyright
 )
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+set(FILES_TO_MOVE)
+list(APPEND FILES_TO_MOVE
+    "plugin.json"
+    "LICENSE"
+    "VERSION"
+)
+foreach(FILE IN LISTS FILES_TO_MOVE)
+    file(
+        COPY "${CURRENT_PACKAGES_DIR}/${FILE}"
+        DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+    )
+    file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/${FILE}")
+    file(REMOVE "${CURRENT_PACKAGES_DIR}/${FILE}")
+endforeach()
