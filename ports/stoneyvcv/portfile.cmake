@@ -29,7 +29,7 @@
 # 	See additional helpful variables in /docs/maintainers/vcpkg_common_definitions.md
 
 vcpkg_from_github(
-    OUT_SOURCE_PATH STONEYVCV_DIR
+    OUT_SOURCE_PATH SOURCE_PATH
     REPO StoneyDSP/StoneyVCV
     REF production
     SHA512 8e97239c037c7bd2c3bf971aaed74b3ec417659137310fde91a496aeb5805b6d5ebce370ce772d820338882b2c48c5f91e830bbe09aa001b3be7e850b2d400dd
