@@ -29,7 +29,8 @@
 # 	See additional helpful variables in /docs/maintainers/vcpkg_common_definitions.md
 
 if(VCPKG_TARGET_IS_MINGW)
-    set(VCPKG_CRT_LINKAGE)
+    # Rack-SDK uses the old C runtime...
+    set(VCPKG_POLICY_ALLOW_OBSOLETE_MSVCRT enabled)
 endif()
 
 vcpkg_from_github(
