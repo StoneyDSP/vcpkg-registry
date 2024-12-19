@@ -1,7 +1,18 @@
 {
   "dependencies": [
 		"curl",
-    "rack-sdk"
-
+    {
+      "name": "stoneydsp",
+      "version>=": "0.0.0",
+			"default-features": true
+    },
+    {
+      "name": "rack-sdk",
+      "version>=": "2.5.2",
+      "default-features": true,
+      "features": [
+        "dep", "lib", "runtimes"
+      ]
+    }
   ]
 }
