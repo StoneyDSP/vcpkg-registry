@@ -96,3 +96,16 @@ foreach(FILE IN LISTS FILES_TO_MOVE)
     file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/${FILE}")
     file(REMOVE "${CURRENT_PACKAGES_DIR}/${FILE}")
 endforeach()
+if(VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
+    set(FILE "plugin.dll")
+elseif(VCPKG_TARGET_IS_OSX)
+    set(FILE "plugin.dylib")
+else()
+    set(FILE "plugin.so")
+endif()
+file(
+    COPY "${CURRENT_PACKAGES_DIR}/${FILE}"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/lib/rack/plugins/${PORT}"
+)
+file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/${FILE}")
+file(REMOVE "${CURRENT_PACKAGES_DIR}/${FILE}")
