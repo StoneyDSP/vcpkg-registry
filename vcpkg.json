@@ -13,11 +13,6 @@
       "features": [
         "dep", "lib", "runtimes"
       ]
-    },
-		{
-      "name": "stoneyvcv",
-      "version>=": "2.0.0",
-			"default-features": true
     }
   ]
 }
