@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH STONEYVCV_DIR
     REPO StoneyDSP/StoneyVCV
-    #REF Link-3.0.6
-    #SHA512 7dd811d3b7792722a8754cd0875777b8cf4902a0babff2822a6fd997137eb5feac576263169c71fca24358189e56b5106a32ae1313b33fb6148eb845691a6438
+    REF production
+    SHA512 0
     HEAD_REF production
     #PATCHES
 )
